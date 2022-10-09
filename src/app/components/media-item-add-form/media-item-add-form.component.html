@@ -1,0 +1,10 @@
+<form [formGroup]="mediaItemForm" (ngSubmit)="onSubmit(mediaItemForm.value)">
+  Name&nbsp;<input
+    formControlName="Name"
+    name="Name"
+    id="Name"
+    type="text"
+  /><br />
+  Age&nbsp;<input formControlName="Age" name="Age" id="Age" type="age" /><br />
+  <button [disabled]="!mediaItemForm.valid" type="submit">SUBMIT</button>
+</form>
