@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MediaItemService } from '../services/media-item.service';
 
 @Component({
   selector: 'app-media-item',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./media-item.component.css'],
 })
 export class MediaItemComponent implements OnInit {
-  constructor() {}
+  constructor(private mediaItemService: MediaItemService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.mediaItemService.get().subscribe((data) => {
+      console.log(data);
+    });
+  }
 }
